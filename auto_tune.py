@@ -23,7 +23,7 @@ param_grid = {
 
     "tau": [1],
 
-    "sim_lambda": [1, 2, 0.1, 0.5],
+    "sim_lambda": [1, 1.5, 0.1, 0.5],
 
     "sim": ['cos']
 }

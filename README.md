@@ -1,6 +1,6 @@
 # ACLSRec
 
-This is our Pytorch implementation for the paper: "**[Adaptive Contrastive Learning in Sequential Recommendation based on Perturbation and Restoration Networks](https://doi.org/10.1145/nnnnnnn.nnnnnnn)**" (WWW 2026).
+This is our Pytorch implementation for the paper: "**[Adaptive Contrastive Learning in Sequential Recommendation based on Perturbation and Restoration Networks](https://doi.org/10.5281/zenodo.18309806)**" (WWW 2026).
 
 ## Environment Requirement
 
