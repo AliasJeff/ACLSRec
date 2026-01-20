@@ -160,7 +160,7 @@ class Trainer(AbstractTrainer):
             ) if show_progress else enumerate(train_data)
         )
         if 'sim_lambda' in self.config:
-            updated_sim_lambda = self.config['sim_lambda'] * iter_data.total
+            updated_sim_lambda = 0.2 * self.config['sim_lambda'] * iter_data.total
             if hasattr(self.model, 'sim_lambda'):
                 self.model.sim_lambda = updated_sim_lambda
 
