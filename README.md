@@ -25,22 +25,6 @@ $ tree
 ├── Amazon_Beauty
 │   ├── Amazon_Beauty.inter
 │   └── Amazon_Beauty.item
-├── Amazon_Clothing_Shoes_and_Jewelry
-│   ├── Amazon_Clothing_Shoes_and_Jewelry.inter
-│   └── Amazon_Clothing_Shoes_and_Jewelry.item
-├── Amazon_Sports_and_Outdoors
-│   ├── Amazon_Sports_and_Outdoors.inter
-│   └── Amazon_Sports_and_Outdoors.item
-├── ml-1m
-│   ├── ml-1m.inter
-│   ├── ml-1m.item
-│   ├── ml-1m.user
-│   └── README.md
-└── yelp
-    ├── README.md
-    ├── yelp.inter
-    ├── yelp.item
-    └── yelp.user
 
 ```
 
@@ -49,7 +33,7 @@ $ tree
 We provide the implementation based on RecBole. You can directly evaluate the models on the test set.
 
 ```python
-python run_aclsrec.py --dataset=Amazon_Beauty --lmd=0.1 --sim_lambda=100.0 --gamma=0.01 --tau=1 --model=ACLSRec
+python run_seq.py --dataset=Amazon_Beauty --lmd=0.1 --sim_lambda=1 --gamma=0.01 --tau=1 --model=ACLSRec
 ```
 
 ## Acknowledgment
@@ -68,7 +52,6 @@ python run_aclsrec.py --dataset=Amazon_Beauty --lmd=0.1 --sim_lambda=100.0 --gam
   booktitle = {Proceedings of the ACM Conference},
   year      = {2026},
   publisher = {WWW},
-  address   = {Zhejiang University of Technology}
 }
 ```
 - Please kindly cite our paper if this paper and the code are helpful.

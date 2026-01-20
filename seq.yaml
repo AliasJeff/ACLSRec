@@ -51,7 +51,7 @@ log_root: "./log/"
 data_path: "./dataset/"
 
 lmd: 0.1
-sim_lambda: 100
+sim_lambda: 1
 gamma: 0.01
 tau: 1
 
