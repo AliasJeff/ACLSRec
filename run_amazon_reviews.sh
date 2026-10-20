@@ -1,5 +1,6 @@
 #!/bin/bash
 # ACLSRec — 在 SECL AmazonReviews2014 / Yelp 数据集上运行
+# 结果表参数指示: epochs=50 (seq.yaml#L34), eval_step=10 (seq.yaml#L39)
 #
 # 流程（每个 category）：
 #   1) 数据转换: SECL cache -> dataset/<category>/<category>.inter（已有则跳过）
@@ -55,6 +56,8 @@ for category in "${CATEGORIES[@]}"; do
         --config_files="seq.yaml" \
         --seed="${SEED}" \
         --gpu_id=0 \
+        --epochs=50 \
+        --eval_step=10 \
         > "${LOG_FILE}" 2>&1
 
     echo ">> [${category}] final results:"

@@ -44,11 +44,14 @@ def main():
     with open(json_path, "r", encoding="utf-8") as f:
         all_item_seqs = json.load(f)
 
+    # ACLSRec's seq.yaml loads [user_id, item_id, rating, timestamp]; the
+    # official Amazon_Beauty.inter also carries a rating:float column. All
+    # interactions are implicit feedback, so write a constant 1.0 rating.
     with open(inter_path, "w", encoding="utf-8") as f:
-        f.write("user_id:token\titem_id:token\ttimestamp:float\n")
+        f.write("user_id:token\titem_id:token\trating:float\ttimestamp:float\n")
         for user_id, item_seq in all_item_seqs.items():
             for index, item_id in enumerate(item_seq):
-                f.write(f"{user_id}\t{item_id}\t{index}\n")
+                f.write(f"{user_id}\t{item_id}\t1.0\t{index}\n")
 
     print(f"Successfully saved RecBole .inter file to: {inter_path}")
     print(f"  users: {len(all_item_seqs)}, "

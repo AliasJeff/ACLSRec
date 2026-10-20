@@ -1,5 +1,20 @@
 import argparse
 
+# PyTorch >= 2.6 compatibility: torch.load defaults to weights_only=True,
+# which breaks old RecBole checkpoint saving/loading (the saved files embed
+# a RecBole Config object). Force the legacy permissive behavior.
+import torch
+
+_orig_torch_load = torch.load
+
+
+def _torch_load_compat(*args, **kwargs):
+    kwargs.setdefault('weights_only', False)
+    return _orig_torch_load(*args, **kwargs)
+
+
+torch.load = _torch_load_compat
+
 from recbole.quick_start import run_recbole
 
 
